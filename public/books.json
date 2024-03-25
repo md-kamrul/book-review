@@ -1,0 +1,155 @@
+[
+    {
+        "bookId": 1,
+        "bookName": "The Lord of the Rings: The Fellowship of the Ring",
+        "author": "J. R. R. Tolkien",
+        "image": "https://i.ibb.co/TrywCzC/kindpng-81724-1.png",
+        "review": "An epic tale of adventure, fellowship, and the fight against evil. A true classic of fantasy literature.",
+        "totalPages": 482,
+        "rating": 4.8,
+        "category": "Fantasy",
+        "tags": [
+            "Epic",
+            "Adventure",
+            "Quest"
+        ],
+        "publisher": "Allen & Unwin",
+        "yearOfPublishing": 1954
+    },
+    {
+        "bookId": 2,
+        "bookName": "Pride and Prejudice",
+        "author": "Jane Austen",
+        "image": "https://i.ibb.co/RjB34MS/kindpng-1064993.png",
+        "review": "A witty and insightful social commentary wrapped in a delightful romance. Explores themes of class, love, and societal expectations.",
+        "totalPages": 225,
+        "rating": 4.2,
+        "category": "Romance",
+        "tags": [
+            "Classic",
+            "Social Commentary",
+            "Witty"
+        ],
+        "publisher": "E. P. Dutton and Company",
+        "yearOfPublishing": 1813
+    },
+    {
+        "bookId": 3,
+        "bookName": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "image": "https://i.ibb.co/YfF5yC2/kindpng-2193744-1.png",
+        "review": "A powerful story about racial injustice and the importance of empathy, seen through the eyes of a young girl.",
+        "totalPages": 324,
+        "rating": 4.9,
+        "category": "Historical Fiction",
+        "tags": [
+            "Coming-of-Age",
+            "Social Justice",
+            "Prejudice"
+        ],
+        "publisher": "J. B. Lippincott & Co.",
+        "yearOfPublishing": 1960
+    },
+    {
+        "bookId": 4,
+        "bookName": "Dune",
+        "author": "Frank Herbert",
+        "image": "https://i.ibb.co/GkQSTTp/kindpng-2592315-1.png",
+        "review": "A complex and thought-provoking science fiction epic exploring themes of politics, ecology, and humanity's place in the universe.",
+        "totalPages": 863,
+        "rating": 4.5,
+        "category": "Science Fiction",
+        "tags": [
+            "Political Intrigue",
+            "Ecology",
+            "Space Opera"
+        ],
+        "publisher": "Chilton Books",
+        "yearOfPublishing": 1965
+    },
+    {
+        "bookId": 5,
+        "bookName": "One Hundred Years of Solitude",
+        "author": "Gabriel García Márquez",
+        "image": "https://i.ibb.co/16wY8bK/kindpng-4022054-1.png",
+        "review": "A magical realist masterpiece that follows the rise and fall of a family through generations, intertwined with the history of a fictional town.",
+        "totalPages": 352,
+        "rating": 4.7,
+        "category": "Magical Realism",
+        "tags": [
+            "Family Saga",
+            "Historical Fiction",
+            "Latin American Literature"
+        ],
+        "publisher": "Editorial Sudamericana",
+        "yearOfPublishing": 1967
+    },
+    {
+        "bookId": 6,
+        "bookName": "A Brief History of Time",
+        "author": "Stephen Hawking",
+        "image": "https://i.ibb.co/XWNPFjW/kindpng-4945926-1.png",
+        "review": "A groundbreaking exploration of cosmology and the origins of the universe, made accessible to a wider audience.",
+        "totalPages": 212,
+        "rating": 4.3,
+        "category": "Science",
+        "tags": [
+            "Cosmology",
+            "Black Holes",
+            "General Relativity"
+        ],
+        "publisher": "Bantam Books",
+        "yearOfPublishing": 1988
+    },
+    {
+        "bookId": 7,
+        "bookName": "The Handmaid's Tale",
+        "author": "Margaret Atwood",
+        "image": "https://i.ibb.co/41JZsXp/kindpng-5624060-1.png",
+        "review": "A chilling dystopian novel that explores themes of oppression, female subjugation, and the fight for freedom.",
+        "totalPages": 344,
+        "rating": 4.6,
+        "category": "Dystopian Fiction",
+        "tags": [
+            "Speculative Fiction",
+            "Feminism",
+            "Social Commentary"
+        ],
+        "publisher": "Fawcett Canadian",
+        "yearOfPublishing": 1985
+    },
+    {
+        "bookId": 8,
+        "bookName": "The Hitchhiker's Guide to the Galaxy",
+        "author": "Douglas Adams",
+        "image": "https://i.ibb.co/MpGgc75/kindpng-7318921.png",
+        "review": "A hilarious and irreverent science fiction comedy that follows the adventures of Arthur Dent and his quest for meaning in a universe on the brink of destruction.",
+        "totalPages": 192,
+        "rating": 4.4,
+        "category": "Science Fiction",
+        "tags": [
+            "Satire",
+            "Humor",
+            "Space Adventure"
+        ],
+        "publisher": "Pan Books",
+        "yearOfPublishing": 1979
+    },
+    {
+        "bookId": 9,
+        "bookName": "Things Fall Apart",
+        "author": "Chinua Achebe",
+        "image": "https://i.ibb.co/rHfWgRS/pngwing-1.png",
+        "review": "A powerful novel that explores the clash of cultures and the devastating impact of colonialism on traditional African life.",
+        "totalPages": 209,
+        "rating": 4.8,
+        "category": "Historical Fiction",
+        "tags": [
+            "Postcolonial Literature",
+            "Coming-of-Age",
+            "Culture Clash"
+        ],
+        "publisher": "Heinemann Educational Books",
+        "yearOfPublishing": 1958
+    }
+]
