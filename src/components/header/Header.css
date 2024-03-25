@@ -1,0 +1,24 @@
+.menu li a {
+    color: rgba(19, 19, 19, 0.8);
+    font-weight: 400;
+    border: 1px solid transparent;
+}
+
+.btn:hover{
+    background-color: transparent;
+}
+
+.menu li>*:not(ul, .menu-title, details, .btn):hover,
+.menu li>*:not(ul, .menu-title, details, .btn).hover,
+.menu li>details>summary:hover {
+    background-color: #22be0a4d;
+}
+
+.menu li>*:not(ul, .menu-title, details, .btn):active,
+.menu li>*:not(ul, .menu-title, details, .btn).active,
+.menu li>details>summary:active {
+    font-weight: 600;
+    color: #23BE0A;
+    border: 1px solid #23BE0A;
+    background-color: transparent;
+}
