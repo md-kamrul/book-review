@@ -13,7 +13,7 @@ const Book = (book) => {
                     </div>
                 </figure>
                 <div className="card-body px-2">
-                    <div className="flex gap-3">
+                    <div className="flex gap-3 mb-3">
                         {
                             tags.map((tag) => <Tag key={bookId} tag={tag}></Tag>)
                         }
