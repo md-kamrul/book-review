@@ -1,6 +1,6 @@
 const Hero = () => {
     return (
-        <div>
+        <div className="mb-[100px]">
             <div className="hero bg-[#1313130D] rounded-3xl mt-10 px-28 py-16">
                 <div className="hero-content flex-col lg:flex-row-reverse gap-10">
                     <img src="https://i.ibb.co/Hzv4r9y/id-1.png" className="max-w-sm rounded-lg shadow-2xl" />
