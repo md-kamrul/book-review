@@ -1,11 +1,12 @@
+import PropTypes from 'prop-types';
 import Tag from "../tag/Tag";
 import { FaRegStar } from "react-icons/fa";
 
-const Book = (book) => {
-    const { bookId, bookName, author, image, rating, category, tags } = book.book;
+const Book = ({ book, bookDetails }) => {
+    const { bookId, bookName, author, image, rating, category, tags } = book;
 
     return (
-        <div className="col-span-1 border border-[#13131326] rounded-2xl">
+        <div onClick={() => bookDetails(book)} className="col-span-1 border border-[#13131326] rounded-2xl cursor-pointer hover:border-[#23BE0A]">
             <div className="card p-5">
                 <figure className="w-full h-full flex items-center justify-center bg-[#F3F3F3] rounded-2xl">
                     <div className="p-5">
@@ -34,6 +35,18 @@ const Book = (book) => {
             </div>
         </div>
     );
+};
+
+Book.propTypes = {
+    bookDetails: PropTypes.func,
+    book: PropTypes.object,
+    bookId: PropTypes.number,
+    bookName: PropTypes.string,
+    author: PropTypes.string,
+    image: PropTypes.string,
+    rating: PropTypes.number,
+    category: PropTypes.string,
+    tags: PropTypes.array
 };
 
 export default Book;
