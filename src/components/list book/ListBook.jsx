@@ -6,7 +6,7 @@ const ListBook = ({ bookId, readBookList }) => {
     const { image, bookName, author, tags, yearOfPublishing, publisher, totalPages, category, rating } = readBookList
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="hero bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
                     <div>

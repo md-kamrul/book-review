@@ -11,16 +11,19 @@ const ListedBooks = () => {
         fetch('../../../public/books.json')
             .then(res => res.json())
             .then(data => setBooks(data))
-    }
-        , []);
+    }, []);
 
     const readBooks = getStoredList("readLists");
     let readBooksList = [];
     books.forEach(element => {
-        if (element.bookId == readBooks) {
+        let i = 0;
+        console.log(readBooks);
+        if (element.bookId == readBooks[i]) {
             readBooksList.push(element);
+            i++;
         }
     });
+    console.log(readBooksList);
 
     return (
         <div className="mt-9">
@@ -56,11 +59,11 @@ const ListedBooks = () => {
                 <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist Books" checked />
                 <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
 
-                    {/* <div>
+                    <div>
                         {
                             readBooksList.map(readBookList => <ListBook key={readBookList.bookId} readBookList={readBookList}></ListBook>)
                         }
-                    </div> */}
+                    </div>
 
                 </div>
             </div>
