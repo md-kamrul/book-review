@@ -1,16 +1,8 @@
-const getStoredWishList = () => {
-    const storedWishList = localStorage.getItem("wishLists");
+import { getStoredList } from "./getStoredList";
 
-    if (storedWishList) {
-        return JSON.parse(storedWishList);
-    }
-
-    return [];
-}
-
-const saveWishList = id => {
-    let noOryes = 0;
-    const storedWishLists = getStoredWishList();
+let noOryes = 1;
+const saveWishList = (id, listName) => {
+    const storedWishLists = getStoredList(listName);
     const existOrNot = storedWishLists.find(bookId => bookId === id);
 
     if (!existOrNot) {
@@ -25,4 +17,4 @@ const saveWishList = id => {
     return noOryes;
 }
 
-export { getStoredWishList, saveWishList }
+export { saveWishList }

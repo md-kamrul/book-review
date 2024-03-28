@@ -1,21 +1,14 @@
-const getStoredReadList = () => {
-    const storedReadList = localStorage.getItem("readLists");
+import { getStoredList } from "./getStoredList";
 
-    if (storedReadList) {
-        return JSON.parse(storedReadList);
-    }
-
-    return [];
-}
-
-const saveReadList = id => {
-    let noOryes = 0;
-    const storedReadLists = getStoredReadList();
+let noOryes = 2;
+const saveReadList = (id, listName) => {
+    const storedReadLists = getStoredList(listName);
     const existOrNot = storedReadLists.find(bookId => bookId === id);
-
-    if (!existOrNot) {
+    console.log(existOrNot);
+    if (!existOrNot && listName !== "wishLists") {
         storedReadLists.push(id);
         localStorage.setItem("readLists", JSON.stringify(storedReadLists));
+        noOryes = noOryes - 1;
     }
 
     else {
@@ -25,4 +18,4 @@ const saveReadList = id => {
     return noOryes;
 }
 
-export { getStoredReadList, saveReadList }
+export { saveReadList }
