@@ -14,16 +14,21 @@ const ListedBooks = () => {
     }, []);
 
     const readBooks = getStoredList("readLists");
+    const wishBooks = getStoredList("wishLists");
+    let wishBooksList = [];
     let readBooksList = [];
     books.forEach(element => {
-        let i = 0;
-        console.log(readBooks);
-        if (element.bookId == readBooks[i]) {
-            readBooksList.push(element);
-            i++;
-        }
+        readBooks.forEach(readBook => {
+            if (element.bookId == readBook) { 
+                readBooksList.push(element)
+            }
+        });
+        wishBooks.forEach(wishBook => { 
+            if (element.bookId == wishBook) { 
+                wishBooksList.push(element);
+            }
+        })
     });
-    console.log(readBooksList);
 
     return (
         <div className="mt-9">
@@ -44,7 +49,7 @@ const ListedBooks = () => {
             </div>
 
             {/* tab */}
-            <div role="tablist" className="tabs tabs-lifted text-lg">
+            <div role="tablist" className="tabs tabs-lifted">
                 <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read Books" />
                 <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
 
@@ -61,7 +66,7 @@ const ListedBooks = () => {
 
                     <div>
                         {
-                            readBooksList.map(readBookList => <ListBook key={readBookList.bookId} readBookList={readBookList}></ListBook>)
+                            wishBooksList.map(wishBookList => <ListBook key={wishBookList.bookId} readBookList={wishBookList}></ListBook>)
                         }
                     </div>
 
