@@ -23,7 +23,7 @@ const Header = () => {
                             {navbar}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-xl text-[#131313]">Book Vibe</a>
+                    <a className="btn btn-ghost text-xl text-[#131313]"><NavLink to="/">Book Review</NavLink></a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
