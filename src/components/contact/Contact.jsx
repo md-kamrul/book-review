@@ -5,9 +5,6 @@ import { FaMobileScreenButton } from "react-icons/fa6";
 
 const Contact = () => {
     return (
-        // <div className="w-full flex justify-center">
-        //     <div className="text-5xl my-[20%]">Contact Page Coming Soon...</div>
-        // </div>
         <div>
             <h2 className="text-3xl font-bold my-12 text-center">Get In Touch</h2>
             <div className="text-xl font-semibold text-center flex flex-col gap-7">
