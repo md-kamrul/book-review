@@ -1,13 +1,30 @@
 import { useLoaderData, useParams } from "react-router-dom";
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Tag from "../tag/Tag";
+import { saveWishList } from "../../utility/wishlistLocalStorage";
 
 const BookDetails = () => {
 
     const bookDetails = useLoaderData();
     const { bookId } = useParams();
     const bookDetail = bookDetails.find(bookDetail => bookId == bookDetail.bookId);
-    console.log(bookId, bookDetail);
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = bookDetail;
+
+    const handleWishList = () => {
+        const check = saveWishList(bookId);
+        console.log(check);
+        if (check !== 1) {
+            toast("The book has been added to the Wish list!!");
+        }
+        else { 
+            toast("The book has already added!!");
+        }
+    }
+
+    const handleRead = () => {
+        toast("The book has been added to the Read list!!");
+    }
 
     return (
         <div>
@@ -51,8 +68,8 @@ const BookDetails = () => {
                             Rating: <span className="text-[#131313] font-semibold">{rating}</span>
                         </p>
                         <div className="flex gap-4">
-                            <a className="btn bg-transparent border-[#1313134D] text-black hover:text-[#23BE0A] hover:border-[#23BE0A]">Read</a>
-                            <a className="btn bg-[#59C6D2] text-white hover:text-[#59C6D2] hover:border-[#59C6D2]">Wishlist</a>
+                            <a onClick={handleRead} className="btn bg-transparent border-[#1313134D] text-black hover:text-[#23BE0A] hover:border-[#23BE0A]">Read</a>
+                            <a onClick={handleWishList} className="btn bg-[#59C6D2] text-white hover:text-[#59C6D2] hover:border-[#59C6D2]">Wishlist</a>
                         </div>
                     </div>
                 </div>
