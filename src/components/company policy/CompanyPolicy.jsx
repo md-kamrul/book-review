@@ -1,12 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 const CompanyPolicy = () => {
     return (
-        // <div className="w-full flex justify-center">
-        //     <div className="text-5xl my-[20%]">Company Policy Page Coming Soon...</div>
-        // </div>
-
         <div className="mt-10 py-4">
             <h2 className="text-2xl font-bold py-4">Mission Statement</h2>
-            <p>Book Review is dedicated to providing readers with insightful and unbiased book reviews. We strive to connect readers with the books they will love and offer constructive feedback to authors.</p>
+            <p><NavLink to="/"><span className="bg-[#23be0a] p-1 rounded-md text-white">Book Review</span></NavLink> is dedicated to providing readers with insightful and unbiased book reviews. We strive to connect readers with the books they will love and offer constructive feedback to authors.</p>
             <h2 className="text-2xl font-bold py-4">Selection and Acquisition of Books</h2>
             <ol>
                 <li>1. Reviews will be honest, fair, and well-written, offering both positive and negative critiques.</li>
@@ -26,11 +24,13 @@ const CompanyPolicy = () => {
             </ol>
             <h2 className="text-2xl font-bold py-4">Disclaimer</h2>
             <ul>
-                <li>a. The views expressed in reviews are those of the individual reviewer and do not necessarily reflect the opinion of Book Review.</li>
+                <li>a. The views expressed in reviews are those of the individual reviewer and do not necessarily reflect the opinion of <NavLink to="/"><span className="bg-[#23be0a] p-1 rounded-md text-white">Book Review</span></NavLink>.</li>
                 <li>b. We are not responsible for the content of the books we review.</li>
             </ul>
             <h2 className="text-2xl font-bold py-4">Confidentiality</h2>
             <p>Reviewers will not share unpublished manuscripts or author information with unauthorized individuals.</p>
+            <h2 className="text-2xl font-bold py-4">Revisions to this Policy</h2>
+            <p>We reserve the right to revise this policy at any time. Reviewers will be notified of any changes.</p>
         </div>
     );
 };
