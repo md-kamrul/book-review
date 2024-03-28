@@ -1,6 +1,27 @@
 import { IoIosArrowDropdown } from "react-icons/io";
+import { useEffect } from "react";
+import { useState } from "react";
+import { getStoredList } from "../../utility/getStoredList";
+import ListBook from "../list book/ListBook";
 
 const ListedBooks = () => {
+
+    const [books, setBooks] = useState([]);
+    useEffect(() => {
+        fetch('../../../public/books.json')
+            .then(res => res.json())
+            .then(data => setBooks(data))
+    }
+        , []);
+
+    const readBooks = getStoredList("readLists");
+    let readBooksList = [];
+    books.forEach(element => {
+        if (element.bookId == readBooks) {
+            readBooksList.push(element);
+        }
+    });
+
     return (
         <div className="mt-9">
 
@@ -22,10 +43,26 @@ const ListedBooks = () => {
             {/* tab */}
             <div role="tablist" className="tabs tabs-lifted text-lg">
                 <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Read Books" />
-                <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">Read Books</div>
+                <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+
+                    <div>
+                        {
+                            readBooksList.map(readBookList => <ListBook key={readBookList.bookId} readBookList={readBookList}></ListBook>)
+                        }
+                    </div>
+
+                </div>
 
                 <input type="radio" name="my_tabs_2" role="tab" className="tab" aria-label="Wishlist Books" checked />
-                <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">Wishlist Books</div>
+                <div role="tabpanel" className="tab-content bg-base-100 border-base-300 rounded-box p-6">
+
+                    {/* <div>
+                        {
+                            readBooksList.map(readBookList => <ListBook key={readBookList.bookId} readBookList={readBookList}></ListBook>)
+                        }
+                    </div> */}
+
+                </div>
             </div>
 
         </div>

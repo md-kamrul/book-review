@@ -1,21 +1,26 @@
-import { getStoredList } from "./getStoredList";
+const getStoredReadList = () => {
+    const storedReadList = localStorage.getItem("readLists");
 
-let noOryes = 2;
-const saveReadList = (id, listName) => {
-    const storedReadLists = getStoredList(listName);
-    const existOrNot = storedReadLists.find(bookId => bookId === id);
-    console.log(existOrNot);
-    if (!existOrNot && listName !== "wishLists") {
-        storedReadLists.push(id);
-        localStorage.setItem("readLists", JSON.stringify(storedReadLists));
-        noOryes = noOryes - 1;
+    if (storedReadList) {
+        return JSON.parse(storedReadList);
     }
 
-    else {
-        noOryes = noOryes + 1;
-    }
-
-    return noOryes;
+    return [];
 }
 
-export { saveReadList }
+const saveReadList = id => {
+    const storedReadLists = getStoredReadList();
+    const existOrNot = storedReadLists.find(bookId => bookId === id);
+
+
+    if (!existOrNot) {
+        storedReadLists.push(id);
+        localStorage.setItem("readLists", JSON.stringify(storedReadLists));
+        return 1;
+    }
+    else { 
+        return 2
+    }
+}
+
+export { getStoredReadList, saveReadList }

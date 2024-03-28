@@ -1,20 +1,26 @@
-import { getStoredList } from "./getStoredList";
+const getStoredWishList = () => {
+    const storedWishList = localStorage.getItem("wishLists");
 
-let noOryes = 1;
-const saveWishList = (id, listName) => {
-    const storedWishLists = getStoredList(listName);
+    if (storedWishList) {
+        return JSON.parse(storedWishList);
+    }
+
+    return [];
+}
+
+const saveWishList = id => {
+    const storedWishLists = getStoredWishList();
     const existOrNot = storedWishLists.find(bookId => bookId === id);
+    console.log(storedWishLists);
 
     if (!existOrNot) {
         storedWishLists.push(id);
         localStorage.setItem("wishLists", JSON.stringify(storedWishLists));
+        return 1;
     }
-
-    else {
-        noOryes = noOryes + 1;
+    else { 
+        return 2
     }
-
-    return noOryes;
 }
 
-export { saveWishList }
+export { getStoredWishList, saveWishList }

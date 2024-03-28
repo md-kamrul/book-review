@@ -4,7 +4,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import Tag from "../tag/Tag";
 import { saveWishList } from "../../utility/wishlistLocalStorage";
 import { saveReadList } from "../../utility/readlistLocalStorage";
-import { getStoredList } from "../../utility/getStoredList";
 
 const BookDetails = () => {
 
@@ -14,23 +13,41 @@ const BookDetails = () => {
     const { bookName, author, image, review, totalPages, rating, category, tags, publisher, yearOfPublishing } = bookDetail;
 
     const handleWishList = () => {
-        const checkWishList = saveWishList(bookId, "wishLists");
-        const checkReadList = getStoredList(bookId, "readLists");
-        console.log(checkReadList, checkWishList);
-        if (checkWishList === 1 && checkReadList.length === 0) {
-            toast.success("The book has been added to the Wish list!!");
-        }
-        else if (checkWishList !== 1) { 
-            toast.error("The book is already on the Wish List");
-        }
-        else if (checkReadList) {
-            toast.error("The book is already on the Read List");
-        }
-        else {
-            toast.error("The book has already added!!");
-        }
-    }
+        const storedReadList = localStorage.getItem("readLists");
+        console.log(storedReadList);
 
+        if (storedReadList) {
+            const readBooksList = JSON.parse(storedReadList);
+            console.log(readBooksList);
+            readBooksList.forEach(element => {
+                if (element === bookId) {
+                    toast.error("The book is already at Read List");
+                }
+                else {
+                    const check = saveWishList(bookId);
+                    console.log(check);
+                    if (check === 1) {
+                        toast.success("The book has been added to the Wish list!!");
+                    }
+                    else {
+                        toast.error("The book has already added!!");
+                    }
+                }
+            });
+        }
+
+        else {
+            const check = saveWishList(bookId);
+            console.log(check);
+            if (check === 1) {
+                toast.success("The book has been added to the Wish list!!");
+            }
+            else {
+                toast.error("The book has already added!!");
+            }
+        }
+
+    }
     const handleRead = () => {
         const check = saveReadList(bookId);
         console.log(check);
@@ -93,6 +110,5 @@ const BookDetails = () => {
         </div>
     );
 };
-
 
 export default BookDetails;
