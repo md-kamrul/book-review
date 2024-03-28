@@ -3,6 +3,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Tag from "../tag/Tag";
 import { saveWishList } from "../../utility/wishlistLocalStorage";
+import { saveReadList } from "../../utility/readlistLocalStorage";
 
 const BookDetails = () => {
 
@@ -13,7 +14,6 @@ const BookDetails = () => {
 
     const handleWishList = () => {
         const check = saveWishList(bookId);
-        console.log(check);
         if (check !== 1) {
             toast("The book has been added to the Wish list!!");
         }
@@ -23,7 +23,13 @@ const BookDetails = () => {
     }
 
     const handleRead = () => {
-        toast("The book has been added to the Read list!!");
+        const check = saveReadList(bookId);
+        if (check !== 1) {
+            toast("The book has been added to the Read list!!");
+        }
+        else { 
+            toast("The book has already added!!");
+        }
     }
 
     return (
